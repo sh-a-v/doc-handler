@@ -1,0 +1,19 @@
+{
+  "name": "doc-handler",
+  "version": "1.0.0",
+  "description": "ePub handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shershnev-AV/doc-handler.git"
+  },
+  "author": "Alexnader Shershnev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shershnev-AV/doc-handler/issues"
+  },
+  "homepage": "https://github.com/Shershnev-AV/doc-handler#readme"
+}
