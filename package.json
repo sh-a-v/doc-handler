@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Shershnev-AV/doc-handler/issues"
   },
-  "homepage": "https://github.com/Shershnev-AV/doc-handler#readme"
+  "homepage": "https://github.com/Shershnev-AV/doc-handler#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
 }
