@@ -1,8 +1,8 @@
 import _ from 'lodash';
-import itemManager from 'core/item-manager';
+import itemHandler from 'core/item-handler';
 
 export default epubManager = {
-  get activeItem() {
+  get _activeItem() {
     return _.findWhere(this.items, {active: true});
   },
 
@@ -15,29 +15,29 @@ export default epubManager = {
     this.settings = settings;
 
     this.items.forEach(item => {
-      itemManager.setSettingsClasses({item, settings});
+      itemHandler.applySettings({item, settings});
     });
   },
 
-  getItem(itemId) {
-    return _.findWhere(this.items, {id: itemId});
-  },
-
   loadItem(options) {
-    let item = this.getItem(options.id);
+    let item = this._getItem(options.id);
 
     if (!item) {
-      item = itemManager.createItem(options);
+      item = itemHandler.createItem(options);
     }
 
-    if (this.activeItem) {
-      if (this.activeItem.id === item.id) {
+    if (this._activeItem) {
+      if (this._activeItem.id === item.id) {
         return;
       }
 
-      itemManager.hideItem(this.activeItem);
+      itemHandler.hideItem(this._activeItem);
     }
 
-    itemManager.showItem(item);
-  }
+    itemHandler.showItem(item);
+  },
+
+  _getItem(itemId) {
+    return _.findWhere(this.items, {id: itemId});
+  },
 }

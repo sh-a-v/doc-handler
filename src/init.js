@@ -1,4 +1,4 @@
-import { checkArgs } from 'core/helpers';
+import { checkArgs } from 'core/tools';
 import epubManager from 'core/epub-manager';
 import itemManager from 'core/item-manager';
 
